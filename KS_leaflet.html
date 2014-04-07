@@ -20,8 +20,8 @@
 
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 
-	<script type="text/javascript" src="https://raw.githubusercontent.com/planetarygeo/planetarygeo.github.io/master/levees.js"></script>
-	<script type="text/javascript" src="https://raw.githubusercontent.com/planetarygeo/planetarygeo.github.io/master/floodplains.js"></script>
+	<script type="text/javascript" src="levees.js"></script>
+	<script type="text/javascript" src="floodplain100.js"></script>
 	<script type="text/javascript">
 
 		var map = L.map('map').setView([38.6272 ,-90.28 ], 10);
@@ -31,14 +31,12 @@
 			styleId: 22677
 		}).addTo(map);
 		
-		var myStylel = {
-			"color": "#ff7800",
-			"weight": 10,
-			"opacity": 0.5
-			};
-		
 		var geoJSON = L.geoJson(levees, {
-			style: mystylel,
+			style: {
+			"color": "black",
+			"weight": 4,
+			"opacity": 1
+			},
 		}).addTo(map);
 
 		var myStylef = {
@@ -48,7 +46,11 @@
 			};
 		
 		var geoJSON = L.geoJson(floodplains, {
-			style: mystylef,
+			style: {
+			"color": "blue",
+			"weight": 1,
+			"opacity": 0.5
+			},
 		}).addTo(map);
 	</script>
 </body>
